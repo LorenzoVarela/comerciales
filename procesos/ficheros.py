@@ -1,6 +1,11 @@
 import pandas as pd
+import warnings
+from openpyxl import Workbook
+
+warnings.simplefilter("ignore")
 
 def leer_comerciales(direccion):
+    print('Estamos leyendo fichero')
     ventas = pd.read_excel(direccion, skiprows=5, decimal=',')
     # Obtenemos los nombres de la cabecera
     nombre_columnas = ventas.columns.tolist()
